@@ -1,0 +1,22 @@
+# Бинарные файлы
+*.exe
+*.out
+*.o
+*.a
+*.so
+*.dll
+
+# Сборки
+build/
+bin/
+obj/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Системные
+.DS_Store
+Thumbs.db
