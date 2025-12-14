@@ -1,9 +1,14 @@
-## Изучение C++
+# C++ Learning: Practice After Each Topic
 
-Этот репозиторий содержит мои ежедневные задачи и примеры по изучению C++.
+This repository documents my C++ learning journey. I save my solutions to practice problems here after studying each new topic.
 
-##  Цель
+## Goal
 
-- Изучать одну новую тему C++
-- Решать практические задачи
-- Отслеживать свой прогресc
+**Learn → Practice → Reinforce → Document**
+
+For each topic I:
+1. Study the theory
+2. Solve a simple problem on that topic
+3. Save the solution with comments
+4. Note down key insights
+
