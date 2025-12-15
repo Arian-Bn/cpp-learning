@@ -1,0 +1,64 @@
+============================================================================
+TASK: "Library Catalog" - Access Control Practice in C++ Inheritance
+============================================================================
+
+OBJECTIVE:
+Practice using access specifiers (public, protected, private) in inheritance
+and understand how they affect member accessibility in base and derived classes.
+
+TASK DESCRIPTION:
+
+1. CREATE BASE CLASS 'Book'
+   - Protected member: title (string)
+   - Private member: author (string)
+   - Public constructor: Book(string title, string author)
+   - Public method: void printInfo()
+     Outputs: "Book: [title], Author: [author]"
+
+2. CREATE DERIVED CLASS 'TextBook' (public inheritance from Book)
+   - Private member: subject (string)
+   - Public constructor: TextBook(string title, string author, string subject)
+     Must call base class constructor
+   - Public method: void printFullInfo()
+     Outputs: "Textbook: [title], Subject: [subject]"
+   - Inside printFullInfo(), try to access:
+     a) title member (should succeed - protected in base)
+     b) author member (should fail - private in base)
+     This demonstrates access control limitations.
+
+3. IN main() FUNCTION:
+   - Create Book object: Book novel("1984", "George Orwell")
+     Call novel.printInfo()
+   - Create TextBook object: TextBook physics("Physics Vol.1", "Ivanov", "Physics")
+     Call physics.printFullInfo()
+     Call physics.printInfo() (should work due to public inheritance)
+
+BONUS CHALLENGE:
+
+What happens if you change inheritance to private?
+   class TextBook : private Book
+   
+   - Can you call physics.printInfo() from main()?
+   - How can you restore access to printInfo() without changing 
+     the inheritance specifier back to public?
+   (Hint: Use the 'using' keyword as shown in the lesson)
+
+COMPILATION & TESTING:
+   - Compile with: g++ -o program main.cpp -std=c++11
+   - Run with: ./program
+   - Expected to see both successful access and compilation errors 
+     (for the author access attempt), demonstrating access control rules.
+
+LEARNING OUTCOMES:
+   - Understand difference between private, protected, and public members
+   - Learn how inheritance access specifiers affect member visibility
+   - Practice using 'using' keyword to adjust access levels
+   - See practical limitations of private inheritance
+
+============================================================================
+IMPLEMENTATION STEPS:
+1. Create book.h / book.cpp with Book class
+2. Create textbook.h / textbook.cpp with TextBook class  
+3. Create main.cpp with test code
+4. Compile and test each scenario
+============================================================================
