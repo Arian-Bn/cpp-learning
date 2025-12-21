@@ -1,0 +1,4 @@
+Create a class BasicCalculator with a method calculate(int a, int b) that returns the sum of two numbers. Then create a class AdvancedCalculator that inherits from BasicCalculator and adds:
+
+1. A hiding method calculate(int a, int b) that returns the product of the numbers
+2. A method showBasicCalculation() that calls the hidden version from the base class
