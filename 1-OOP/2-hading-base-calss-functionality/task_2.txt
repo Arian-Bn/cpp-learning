@@ -1,0 +1,27 @@
+Task: Method and Field Hiding in Inheritance Hierarchy
+
+Create an Animal class hierarchy demonstrating:
+1. Method hiding - override makeSound() in derived class
+2. Field hiding - create same-named field in derived class
+3. Access to hidden members using scope resolution operator
+
+Requirements:
+- Base class Animal with:
+  * protected field: name
+  * public method: makeSound() printing "Some generic sound"
+  * constructor with default parameter name = "Unknown"
+  * optional: getName() method returning name
+
+- Derived class Dog inheriting from Animal:
+  * private field: name (hiding Animal::name)
+  * hiding method: makeSound() printing "Woof!"
+  * method showBothNames() demonstrating:
+    - Access to base class name (Animal::name)
+    - Access to derived class name (this->name)
+    - Calling both makeSound() versions (current and base)
+
+Key concepts to demonstrate:
+- Difference between method hiding and polymorphism (non-virtual)
+- Using :: operator to access hidden base class members
+- Field name conflict resolution in inheritance
+- Access specifiers (private/protected) impact on member visibility
