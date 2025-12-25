@@ -1,0 +1,17 @@
+Title: Multiple Inheritance - SmartWatch System Implementation
+
+Description:
+Create a class system representing a smartwatch using multiple inheritance.
+The SmartWatch class should inherit from three base classes:
+1. Clock - manages and displays time
+2. FitnessTracker - tracks and displays step count
+3. Notifier - handles notifications
+
+Requirements:
+- Clock: Constructor takes hours/minutes, has showTime() method
+- FitnessTracker: Constructor takes step count, has showSteps() method
+- Notifier: Has showNotification() and clearNotification() methods
+- SmartWatch: Inherits from all three classes, has showAll() method
+
+Goal: Demonstrate multiple inheritance, constructor chaining, and method
+access from derived class to multiple base classes.
