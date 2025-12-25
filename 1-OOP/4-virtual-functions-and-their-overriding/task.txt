@@ -1,0 +1,58 @@
+Title: Virtual Functions and Polymorphism - Geometric Shapes System
+
+Objective:
+Create a polymorphic hierarchy of geometric shape classes to demonstrate 
+the difference between static and dynamic binding, function overriding, 
+and virtual function mechanics.
+
+Task Description:
+Implement a system of geometric shapes where:
+1. Base class Shape provides virtual functions for area and perimeter calculation
+2. Derived classes (Rectangle, Circle, Triangle) override these functions
+3. Demonstrate polymorphism through base class pointers/references
+
+Core Requirements:
+
+1. Base Class Shape:
+   - Virtual functions: area(), perimeter()
+   - Virtual destructor
+   - Non-virtual function printInfo() that calls virtual methods
+
+2. Derived Classes:
+   - Rectangle: takes width, height in constructor
+   - Circle: takes radius in constructor
+   - Triangle: takes side length in constructor
+   - Each class overrides area() and perimeter() with appropriate formulas
+
+3. Main Program Must Demonstrate:
+   - Array of Shape* pointers containing different derived objects
+   - Polymorphic behavior: calling area()/perimeter() through base pointer
+   - Difference between direct calls and calls through pointers/references
+   - Object slicing when copying derived objects to base objects
+   - Proper memory management with virtual destructor
+
+Formulas to Implement:
+- Rectangle area = width × height, perimeter = 2×(width + height)
+- Circle area = π×radius², perimeter = 2×π×radius (use PI ≈ 3.14159)
+- Equilateral Triangle area = (√3/4)×side², perimeter = 3×side
+
+Key Concepts to Illustrate:
+✓ Virtual vs non-virtual functions
+✓ Function overriding vs function hiding
+✓ Static binding (compile-time) vs dynamic binding (run-time)
+✓ Polymorphism through base class pointers
+✓ Object slicing problem
+✓ Virtual destructor necessity
+
+Advanced Challenge (Optional):
+1. Make Shape abstract with pure virtual functions
+2. Add Square class inheriting from Rectangle
+3. Use override and final keywords appropriately
+4. Add getName() virtual function in each class
+
+Expected Learning Outcomes:
+- Understand when and why to use virtual functions
+- Recognize difference between overriding and hiding
+- Know how polymorphism works internally (vtable)
+- Avoid common mistakes with object slicing
+- Properly design class hierarchies with virtual functions
