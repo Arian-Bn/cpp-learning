@@ -1,0 +1,56 @@
+C++ Type Casting Exercise: Employee Management System
+
+Objective:
+Create a simple class hierarchy to practice type casting concepts in C++ inheritance.
+
+Task Description:
+
+1. Create a base class Person with:
+   - Protected field: name (string)
+   - Public constructor taking a name
+   - Virtual method print() that outputs the name
+   - Virtual destructor
+   - Getter getName()
+
+2. Create derived class Employee inheriting from Person:
+   - Additional protected field: position (string)
+   - Constructor taking name and position
+   - Override print() to output name and position
+   - Getter getPosition()
+
+3. Create derived class Manager inheriting from Employee:
+   - Additional protected field: department (string)
+   - Constructor taking name, position, and department
+   - Override print() to output all three fields
+   - Getter getDepartment()
+
+Implementation Tasks in main():
+
+Part 1: Automatic Upcast (Safe)
+- Create Employee object emp("Anna", "Developer")
+- Create Person pointer pointing to emp (automatic upcast)
+- Call print() through Person pointer (demonstrate polymorphism)
+
+Part 2: Downcast with static_cast (Safe when correct)
+- Cast Person pointer back to Employee* using static_cast
+- Access Employee-specific method (getPosition()) to verify successful cast
+
+Part 3: Dangerous Downcast (Undefined Behavior)
+- Create Person object guest("Guest")
+- Create Person pointer pointing to guest
+- Attempt to cast to Manager* using static_cast (syntactically valid but wrong)
+- Note: DO NOT call methods on this pointer to avoid crash
+- Print warning message about the dangerous cast
+
+Expected Learning Outcomes:
+- Understand automatic upcasting (derived → base)
+- Practice safe downcasting with static_cast when type is known
+- Recognize risks of incorrect downcasting (undefined behavior)
+- See polymorphism through virtual functions
+- Learn proper class hierarchy design with inheritance
+
+Compilation Instructions:
+- Compile with: g++ -std=c++20 -o casting_example casting_example.cpp
+- Run with: ./casting_example
+
+Note: This exercise demonstrates why dynamic_cast with type checking is safer for downcasting in real applications.
