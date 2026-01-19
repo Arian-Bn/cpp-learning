@@ -1,0 +1,71 @@
+Dynamic Casting Practice Task: Media Library Management
+
+TASK OVERVIEW:
+Implement a media library management system using dynamic_cast to safely determine 
+object types at runtime. The program demonstrates polymorphism and safe type casting 
+in a class hierarchy.
+
+CLASS HIERARCHY REQUIREMENTS:
+
+1. Media (Base Class):
+   - Properties: title (string), year (unsigned)
+   - Virtual destructor
+   - Virtual printDetails() method
+   - Getters for title and year
+
+2. Book (Derived from Media):
+   - Additional: author (string), pages (unsigned)
+   - Overrides printDetails()
+   - getAuthor() and getPages() methods
+
+3. AudioBook (Derived from Book):
+   - Additional: duration (double), narrator (string)
+   - Overrides printDetails()
+   - getDuration() and getNarrator() methods
+
+4. Movie (Derived from Media):
+   - Additional: director (string), duration (int)
+   - Overrides printDetails()
+   - getDirector() method
+
+FUNCTIONAL REQUIREMENTS:
+
+1. Create an array of Media* pointers containing:
+   - A Book object
+   - An AudioBook object
+   - A Movie object
+   - A pure Media object (not derived)
+
+2. Implement processLibrary() function that:
+   - Accepts array of Media* pointers and its size
+   - Uses dynamic_cast to determine actual type of each object
+   - For Book objects: prints "Author: <author_name>"
+   - For AudioBook objects: prints "Narrator: <narrator_name>"
+   - For Movie objects: prints "Director: <director_name>"
+   - For pure Media objects: prints "Basic media object!"
+
+3. Key implementation details:
+   - Check types in correct order: AudioBook → Book → Movie → Media
+   - Use if-else chain with dynamic_cast in conditions
+   - Properly handle failed casts (return nullptr)
+
+EXPECTED OUTPUT:
+Object 1: Author: George Orwell
+Object 2: Narrator: Vasily Livanov
+Object 3: Director: Christopher Nolan
+Object 4: Basic media object!
+
+LEARNING OBJECTIVES:
+- Understand how dynamic_cast works at runtime
+- Learn proper type checking order in inheritance hierarchies
+- Practice safe downcasting with nullptr checks
+- See the importance of virtual destructors in polymorphic classes
+- Demonstrate cross-type identification in class hierarchies
+
+IMPLEMENTATION NOTES:
+- All destructors must be virtual for proper polymorphism
+- dynamic_cast requires polymorphic types (at least one virtual function)
+- Order of type checks is CRITICAL: most derived → base
+- The fourth object tests the nullptr return case
+
+
