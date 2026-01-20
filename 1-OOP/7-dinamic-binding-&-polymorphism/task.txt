@@ -1,0 +1,52 @@
+C++ Dynamic Binding Exercise: Animal Sounds
+
+TASK OVERVIEW:
+Implement a polymorphic animal hierarchy demonstrating dynamic binding,
+virtual functions, and smart pointers in C++.
+
+REQUIREMENTS:
+
+1. CLASS HIERARCHY:
+   - Animal (base class)
+   - Dog (derived from Animal)
+   - Cat (derived from Animal)
+
+2. BASE CLASS (Animal):
+   - Private member: std::string name
+   - Constructor: Animal(const std::string& name)
+   - Virtual method: makeSound() const
+   - Virtual destructor: ~Animal()
+   - Getter: getName() const
+
+3. DERIVED CLASSES:
+   Dog:
+   - Constructor: Dog(const std::string& name)
+   - Override makeSound() to print "Says: Gov-Gov!"
+   - Virtual destructor
+   
+   Cat:
+   - Constructor: Cat(const std::string& name)
+   - Override makeSound() to print "Says: Muo-Mou"
+   - Virtual destructor
+
+4. MAIN FUNCTION:
+   - Create array of std::unique_ptr<Animal> with 2 elements
+   - Initialize with Dog("Rex") and Cat("Whiskers")
+   - Loop through array calling makeSound()
+   - Demonstrate automatic cleanup via virtual destructors
+
+KEY CONCEPTS DEMONSTRATED:
+- Inheritance and polymorphism
+- Virtual functions and dynamic binding
+- Virtual destructors for proper cleanup
+- Smart pointers (std::unique_ptr)
+- Const references to avoid copying
+- Function overriding with 'override' keyword
+
+EXPECTED OUTPUT:
+Rex Says: Gov-Gov!
+WhiskersSays: Muo-Mou
+Deleted Whiskers
+Animal Whiskers deleted.
+Deleted Rex
+Animal Rex deleted.
