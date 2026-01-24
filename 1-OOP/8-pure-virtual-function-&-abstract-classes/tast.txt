@@ -1,0 +1,89 @@
+==============================================
+TASK: EMPLOYEE MANAGEMENT SYSTEM
+Topic: Abstract Classes and Pure Virtual Functions in C++
+Level: Beginner/Intermediate
+==============================================
+
+TASK OBJECTIVE:
+---------------
+To solidify understanding of abstract classes, pure virtual functions,
+and polymorphism in C++ by creating an employee management system.
+
+THEORETICAL BACKGROUND:
+----------------------
+1. ABSTRACT CLASS - a class that contains at least one pure virtual
+   function (= 0). Cannot create objects of abstract class.
+
+2. PURE VIRTUAL FUNCTION - function without implementation,
+   declared with "= 0". Derived classes MUST override it.
+
+3. POLYMORPHISM - ability to treat different types of objects
+   through a common interface (pointer to base class).
+
+TASK DESCRIPTION:
+----------------
+Create an employee management system with different payment types.
+
+IMPLEMENTATION REQUIREMENTS:
+---------------------------
+
+1. ABSTRACT CLASS Employee (base class):
+   - Protected fields:
+     * name (std::string) - employee name
+     * id (int) - unique identifier
+   - Constructor: accepts name and id
+   - Virtual destructor
+   - TWO pure virtual functions:
+     * virtual double calculateSalary() const = 0
+     * virtual void getInfo() const = 0
+
+2. CONCRETE DERIVED CLASSES:
+
+   A) FullTimeEmployee (full-time employee):
+   - Additional field: monthlySalary (double)
+   - calculateSalary(): returns monthlySalary
+   - getInfo(): displays employee information
+
+   B) PartTimeEmployee (part-time employee):
+   - Additional fields:
+     * hourlyRate (double) - hourly rate
+     * hoursWorked (int) - hours worked
+   - calculateSalary(): returns hourlyRate * hoursWorked
+   - getInfo(): displays employee information
+
+   C) Manager (manager):
+   - Additional fields:
+     * baseSalary (double) - base salary
+     * bonus (double) - bonus
+   - calculateSalary(): returns baseSalary + bonus
+   - getInfo(): displays employee information
+
+3. main() FUNCTION:
+   - Create 5 employees of different types
+   - Store them in an array of Employee* pointers
+   - Using loop and polymorphism:
+     * Display information about each employee (getInfo())
+     * Calculate total salary of all employees
+
+EXAMPLE OUTPUT:
+---------------
+=== EMPLOYEE INFORMATION ===
+
+Full time employee		Name: John Smith	ID: 1	Monthly salary: 50000
+Full time employee		Name: Sophia Muller	ID: 2	Monthly salary: 45000
+Part time employee		Name: Maria Garcia	ID: 3	Hourly rate: 500	Salary: 40000
+Part time employee		Name: David Wilson	ID: 4	Hourly rate: 400	Salary: 48000
+Manager			Name: Alex Chen	ID: 5	Base salary: 70000	Bonus: 15000	Salary: 85000
+
+Sum salary is: 268000
+
+SOLUTION VERIFICATION:
+---------------------
+✅ Employee - abstract class (cannot create object)
+✅ All pure virtual functions overridden in derived classes
+✅ Polymorphism used (array of Employee* pointers)
+✅ Virtual destructor in base class
+✅ Override keyword in derived classes
+✅ Protected fields accessible in derived classes
+
+
