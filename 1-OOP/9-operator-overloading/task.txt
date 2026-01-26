@@ -1,0 +1,113 @@
+===============================================================================
+FRACTION CLASS IMPLEMENTATION - OPERATOR OVERLOADING IN C++
+===============================================================================
+
+DESCRIPTION:
+============
+This program implements a complete Fraction class that demonstrates operator 
+overloading in C++. The class represents mathematical fractions (numerator/
+denominator) and provides comprehensive operator support for arithmetic 
+operations, comparisons, type conversions, and stream I/O.
+
+KEY FEATURES:
+=============
+1. Full encapsulation with private data members
+2. Automatic fraction reduction using Euclidean algorithm
+3. Comprehensive operator overloading
+4. Exception handling for invalid operations
+5. Type conversion to double
+6. Stream input/output support
+
+CLASS CAPABILITIES:
+==================
+CONSTRUCTORS:
+- Default: Fraction() creates 1/1
+- Parameterized: Fraction(int n, int d) creates n/d
+
+ARITHMETIC OPERATORS:
+- Addition (+)       : a/b + c/d = (a*d + b*c)/(b*d)
+- Subtraction (-)    : a/b - c/d = (a*d - b*c)/(b*d)
+- Multiplication (*) : (a/b) * (c/d) = (a*c)/(b*d)
+- Division (/)       : (a/b) / (c/d) = (a*d)/(b*c)
+
+COMPOUND ASSIGNMENT OPERATORS:
+- +=, -=, *=, /=
+
+COMPARISON OPERATORS:
+- ==, !=, <, >, <=, >=
+
+UNARY OPERATORS:
+- Unary plus (+) : Returns copy
+- Unary minus (-): Returns negative fraction
+
+INCREMENT/DECREMENT OPERATORS:
+- Prefix (++f, --f)  : Increment/decrement then return
+- Postfix (f++, f--) : Return then increment/decrement
+
+TYPE CONVERSION:
+- Implicit conversion to double
+
+STREAM OPERATORS:
+- Output (<<): Formats as "numerator/denominator"
+- Input (>>): Parses "a/b" format (optional enhancement)
+
+ACCESSORS:
+- getNum(): Returns numerator
+- getDen(): Returns denominator
+
+ERROR HANDLING:
+===============
+- Throws std::invalid_argument for zero denominator
+- Automatic reduction prevents overflow
+- Consistent sign handling (denominator always positive)
+
+IMPLEMENTATION DETAILS:
+======================
+REDUCTION ALGORITHM:
+- Uses Euclidean algorithm to find GCD
+- Ensures fractions are always in lowest terms
+- Handles negative signs appropriately
+
+OPERATOR DESIGN PATTERNS:
+- Arithmetic operators return new Fraction objects
+- Compound operators modify and return *this
+- Comparison operators use cross-multiplication
+- Increment/decrement follow standard C++ conventions
+
+MEMORY MANAGEMENT:
+- Follows RAII principle
+- No dynamic memory allocation needed
+- Automatic cleanup via destructor
+
+EXAMPLE USAGE:
+==============
+Fraction a(1, 2);      // 1/2
+Fraction b(1, 3);      // 1/3
+Fraction c = a + b;    // 5/6
+Fraction d = a * b;    // 1/6
+bool equal = (a == b); // false
+double val = a;        // 0.5
+cout << a;             // Outputs "1/2"
+
+TESTING:
+=======
+The main() function demonstrates:
+1. Basic arithmetic operations
+2. Comparison operations
+3. Compound assignments
+4. Unary operators
+5. Increment/decrement
+6. Type conversion
+7. Accessor methods
+8. Complex expressions
+
+EDUCATIONAL VALUE:
+=================
+This implementation demonstrates:
+- Proper use of const correctness
+- Friend functions for stream operators
+- Expression of operators through other operators
+- Exception safety
+- Mathematical correctness
+- Clean interface design
+
