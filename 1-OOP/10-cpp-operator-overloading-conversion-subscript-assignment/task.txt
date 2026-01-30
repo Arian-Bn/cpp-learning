@@ -1,0 +1,99 @@
+C++ OPERATOR OVERLOADING TASK - COURSE MANAGEMENT SYSTEM
+
+OBJECTIVE:
+Implement a course management system with operator overloading demonstrating:
+- Type conversion operators
+- Subscript operator
+- Assignment operator
+- Inter-class conversions
+
+REQUIREMENTS:
+
+CLASS: COURSE
+Store student grades (0-100) for a single course.
+
+DATA MEMBERS:
+- grades[3]: Array of up to 3 grades
+- gradesCount: Number of actual grades (0-3)
+
+OPERATORS TO IMPLEMENT:
+
+1. CONSTRUCTOR
+   - Parameters: int g1 = -1, g2 = -1, g3 = -1
+   - -1 indicates "no grade"
+   - Initialize gradesCount based on valid grades
+
+2. SUBSCRIPT OPERATOR []
+   - Two versions: const and non-const
+   - Access grades by index (0-2)
+   - Return -1 for invalid indices
+   - Non-const version allows grade modification
+
+3. CONVERSION TO DOUBLE
+   - Compute average grade
+   - Return 0.0 if no grades exist
+   - Implicit conversion
+
+4. EXPLICIT CONVERSION TO BOOL
+   - Return true if average grade ≥ 60.0
+   - Marked as explicit (requires static_cast)
+   - Determines pass/fail status
+
+5. ASSIGNMENT OPERATOR =
+   - Deep copy implementation
+   - Self-assignment check (this == &other)
+   - Copy all 3 grades and gradesCount
+
+6. CONVERSION TO TRANSCRIPT
+   - Convert Course object to Transcript
+   - Automatically determine pass/fail status
+
+ADDITIONAL METHODS:
+- print(): Display grades, count, and average
+
+CLASS: TRANSCRIPT
+Extended course record with additional metadata.
+
+DATA MEMBERS:
+- courseData: Copy of Course object
+- isPassed: Pass/fail status
+- examDate: Exam date string
+
+OPERATORS TO IMPLEMENT:
+- Constructor with default values
+- Conversion operator to Course
+- Getters and setters
+- print() method
+
+KEY FEATURES TO DEMONSTRATE:
+- Implicit type conversion (Course → double)
+- Explicit type conversion (Course → bool)
+- Array-like indexing with bounds checking
+- Safe object copying with deep copy
+- Bidirectional class conversions (Course ↔ Transcript)
+- Const-correctness (const and non-const methods)
+
+TESTING REQUIREMENTS:
+The program must demonstrate:
+- Grade access/modification via operator[]
+- Average calculation via double conversion
+- Pass/fail determination via bool conversion
+- Object copying via assignment operator
+- Course to Transcript conversion
+- Transcript to Course conversion
+- Error handling for invalid indices
+
+IMPLEMENTATION NOTES:
+- Use static variables for error handling in operator[]
+- Check array bounds in all access operations
+- Follow rule of three principles
+- Ensure proper const-correctness
+- Handle edge cases (empty course, invalid indices)
+
+EXPECTED OUTPUT FORMAT:
+Course: 75 80 85 (count: 3, avg: 80)
+Transcript:
+  Passed: Yes
+  Date: 2024-01-30
+  Course data: Course: 75 80 85 (count: 3, avg: 80)
+
