@@ -50,7 +50,7 @@ Expected Learning Outcomes:
 - Learn proper class hierarchy design with inheritance
 
 Compilation Instructions:
-- Compile with: g++ -std=c++20 -o casting_example casting_example.cpp
+- Compile with: g++ -std=c++20 -o casting_example solution.cpp
 - Run with: ./casting_example
 
 Note: This exercise demonstrates why dynamic_cast with type checking is safer for downcasting in real applications.
